@@ -11,3 +11,8 @@ Options:
 Takes 2 options,
 1. the abbreviated timezone as a string (if none is provided it will default to the client's local time).
 2. whether or not you want a smooth second hand or a stoccato second hand (takes true or false, default is false).
+
+![demo example](./1.png)
+![demo example](./2.png)
+![demo example](./3.png)
+![demo example](./4.png)
