@@ -1,5 +1,5 @@
 # clock.js
-A javascript library for ~drawing with time~
+A javascript library for *drawing with time*
 
 This library allows you to create visuals with time by finding the appropriate degree angle for hours, minutes, and seconds.
 
