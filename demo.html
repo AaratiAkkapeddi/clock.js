@@ -3,6 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>clock.js demo</title>
+	<style>
+		body{
+			margin:0;
+		}
+	</style>
 </head>
 <body>
 	<div id='myCanvas'></div>
@@ -16,14 +21,19 @@
 		}
 
 		function draw() {
+		  background(0)
 		  angleMode(DEGREES);
 		  /* NEW YORK */
-		  stroke(0)
+		  stroke(255)
+		  fill(0)
 		  ellipse(400, 400, 80, 80);
 		  translate(400, 400)
+		  fill(255)
+		  textSize(40)
+		  text("New York", -200,-250)
 		  noStroke()
 		  push()
-		  fill(0,0,0)
+		  fill(255,255,255)
 		  rotate(Clock("EST").secondHand)
 		  rect(0,0,1,300)
 		  pop()
@@ -39,12 +49,16 @@
 		  pop()
 
 		  /* Riyadh */
-		  stroke(0)
+		  stroke(255)
+		  fill(0)
 		  ellipse(600, 0, 80, 80);
 		  translate(600, 0)
+		  fill(255)
+		  textSize(40)
+		  text("Riyadh", -200,-250)
 		  noStroke()
 		  push()
-		  fill(0,0,0)
+		  fill(255,255,255)
 		  rotate(Clock("AST").secondHand)
 		  rect(0,0,1,300)
 		  pop()

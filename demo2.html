@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clock.js demo</title>
+	<style>
+		body{
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<div id='myCanvas'></div>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	<script src='clock.js'></script>
+	<script>
+		function setup() {
+			c = createCanvas(windowWidth, windowHeight);
+			c.parent("myCanvas");
+		}
+
+		function draw() {
+		  noStroke()
+		  var r = map(Clock("EST",true).secondHand % 360, 0, 360, 0, 255, true);
+		  var g = map(Clock("EST",true).minuteHand % 360, 0, 360, 0, 255, true);
+		  var b = map(Clock("EST",true).hourHand % 360, 0, 360, 0, 255, true);
+		  background(r,g,b)
+		  fill(b,g,r)
+		  push()
+		  translate(width/2,height/2)
+		  rotate(Clock("EST",true).minuteHand)
+		  ellipse(100,50,300,300)
+		  fill(g,b,r)
+		  rect(0,100,30,30)
+		  pop()
+		  push()
+		  translate(width/2,height/2)
+		  rotate(Clock("EST",true).minuteHand % 360 * -1)
+		  fill(g,r,b)
+		  ellipse(0,100,50,50)
+		  pop()
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
