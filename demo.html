@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clock.js demo</title>
+</head>
+<body>
+	<div id='myCanvas'></div>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	<script src='clock.js'></script>
+	<script>
+		function setup() {
+			c = createCanvas(windowWidth, windowHeight);
+			c.parent("myCanvas");
+			angleMode(DEGREES)
+		}
+
+		function draw() {
+		  angleMode(DEGREES);
+		  /* NEW YORK */
+		  stroke(0)
+		  ellipse(400, 400, 80, 80);
+		  translate(400, 400)
+		  noStroke()
+		  push()
+		  fill(0,0,0)
+		  rotate(Clock("EST").secondHand)
+		  rect(0,0,1,300)
+		  pop()
+		  push()
+		  fill(0,0,255)
+		  rotate(Clock("EST").minuteHand)
+		  rect(0,0,1,200)
+		  pop()
+		  push()
+		  rotate(Clock("EST").hourHand)
+		  fill(255,0,0)
+		  rect(0,0,1,100)
+		  pop()
+
+		  /* Riyadh */
+		  stroke(0)
+		  ellipse(600, 0, 80, 80);
+		  translate(600, 0)
+		  noStroke()
+		  push()
+		  fill(0,0,0)
+		  rotate(Clock("AST").secondHand)
+		  rect(0,0,1,300)
+		  pop()
+		  push()
+		  fill(0,0,255)
+		  rotate(Clock("AST").minuteHand)
+		  rect(0,0,1,200)
+		  pop()
+		  push()
+		  rotate(Clock("AST").hourHand)
+		  fill(255,0,0)
+		  rect(0,0,1,100)
+		  pop()
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
