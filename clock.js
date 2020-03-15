@@ -67,9 +67,9 @@ var Clock = function(timezone = "current", smooth = false){
 			var minutesStuff = time * 0.1;
 			var hoursStuff = time * 0.00833333333;
 		}
-		output = { secondHand: secondsStuff + 180, 
-				   minuteHand: minutesStuff + 180, 
-				   hourHand: hoursStuff + 180};
+		output = { secondHand: (secondsStuff + 180) % 360, 
+				   minuteHand: (minutesStuff + 180) % 360, 
+				   hourHand: (hoursStuff + 180) % 360};
 		return output	
 	}
 	

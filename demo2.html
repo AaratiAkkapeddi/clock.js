@@ -21,21 +21,21 @@
 
 		function draw() {
 		  noStroke()
-		  var r = map(Clock("IST",true).secondHand % 360, 0, 360, 0, 255, true);
-		  var g = map(Clock("IST",true).minuteHand % 360, 0, 360, 0, 255, true);
-		  var b = map(Clock("IST",true).hourHand % 360, 0, 360, 0, 255, true);
+		  var r = map(Clock("GMT",true).secondHand, 0, 360, 0, 255, true);
+		  var g = map(Clock("GMT",true).minuteHand, 0, 360, 0, 255, true);
+		  var b = map(Clock("GMT",true).hourHand, 0, 360, 0, 255, true);
 		  background(r,g,b)
 		  fill(b,g,r)
 		  push()
 		  translate(width/2,height/2)
-		  rotate(Clock("IST",true).minuteHand)
+		  rotate(Clock("GMT",true).minuteHand)
 		  ellipse(100,50,300,300)
 		  fill(g,b,r)
 		  rect(0,100,30,30)
 		  pop()
 		  push()
 		  translate(width/2,height/2)
-		  rotate(Clock("IST",true).minuteHand % 360 * -1)
+		  rotate(Clock("GMT",true).minuteHand % 360 * -1)
 		  fill(g,r,b)
 		  ellipse(0,100,50,50)
 		  pop()
